@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guessing Game</title>
+</head>
+<body>
+  <h1>🎯 Number Guessing Game</h1>
+  <p>Open the <strong>browser console</strong> to play!</p>
+
+  <script>
+    let target = Math.floor(Math.random() * 100) + 1;
+    let guess;
+    let attempts = 0;
+
+    console.log("🔢 I'm thinking of a number between 1 and 100. Try to guess it!");
+
+    function guessNumber(userGuess) {
+      attempts++;
+      if (userGuess === target) {
+        console.log(`🎉 Correct! The number was ${target}. You guessed it in ${attempts} attempts.`);
+      } else if (userGuess < target) {
+        console.log("📉 Too low! Try again.");
+      } else {
+        console.log("📈 Too high! Try again.");
+      }
+    }
+
+    console.log("👉 Use guessNumber(yourGuess) in the console to play.");
+  </script>
+</body>
+</html>
